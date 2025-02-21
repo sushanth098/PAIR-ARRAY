@@ -1,0 +1,23 @@
+pair=int(input("enter the sum number u want"))
+m = []
+size = int(input("Enter size of array: "))
+for i in range(size):
+    num = int(input("Enter a number: "))
+    m.append(num)
+n = []
+b = []
+# Find pairs that sum to 7
+for i in range(len(m)):
+    for j in range(len(m)):
+        if i != j:  # Ensure we are not adding the same element
+            o = m[i] + m[j]
+            if o == pair:
+                n.append(m[i])
+                b.append(m[j])
+# Print results
+print("Pairs that sum to:",pair)
+for i in range(len(n)):
+    print(f"({n[i]}, {b[i]})")
+print("Length of first elements in pairs:", len(n))
+print("Length of second elements in pairs:", len(b))
+print("Original list:", m)
